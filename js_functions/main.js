@@ -3,5 +3,6 @@ function myMessage() {
 }
 
 function add(x,y){
-    console.log(add)
+    var add_result = x + y;
+    console.log(add);
 }

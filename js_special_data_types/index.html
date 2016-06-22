@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Special Data Types</title>
+    <script>
+        var x = null;
+        var y; //undefined
+        var z = "Happy Birthday";
+        var output1 = x  == y; //null == undefined --- should return true
+        var output2 = x == z; //null != string ---- should return false
+        var output3 = y == z; // undefined != string ---should return false
+        console.log("My output1: ", output1);
+        console.log("My output2: ", output2);
+        console.log("My output3: ", output3);
+        //Feature Set #3
+        var output4 = typeof x;
+        var output5 = typeof y;
+        var output6 = typeof z;
+        console.log("The data type of output4 is: ", output4);
+        console.log("The data type of output5 is: ", output5);
+        console.log("The data type of output6 is: ", output6);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

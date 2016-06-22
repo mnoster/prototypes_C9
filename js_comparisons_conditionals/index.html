@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Comparisons and Conditionals</title>
+    <script>
+        //Feature Set #1
+        var mySmallNumber = 5;
+        var myString = "5";
+        var myBigNumber = 255;
+
+        //Feature Set #2
+        var output1 = mySmallNumber == myString;
+        var output2 = mySmallNumber === myString;
+        var output3 = mySmallNumber < myBigNumber;
+        var output4 = mySmallNumber > myBigNumber;
+
+        console.log ("Output1: " + output1 + ", " + "Output2: " + output2 + ", " + "Output3: " + output3 + ", " + "Output4: " + output4 );
+
+        //Feature Set #3
+        var gameNumber = 64;
+        var userInput1 =  88;
+        var userInput2 = 64;
+
+        //Feature Set #4
+        if(userInput1 > gameNumber){
+            console.log("Number is too high")
+        };
+
+        if(userInput1 < gameNumber){
+            console.log("Number is too low")
+        };
+
+        if(100 < userInput1 < 1){
+            console.log("The Number is out of range")
+        }
+        else{
+            console.log("The Number is in range")
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>

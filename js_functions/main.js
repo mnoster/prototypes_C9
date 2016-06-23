@@ -3,6 +3,15 @@ function myMessage() {
 }
 
 function add(x,y){
-    var add_result = x + y;
-    console.log(add);
+    console.log(x + y);
+}
+function add2(x,y){
+    var total = x+y;
+    return total;
+} 
+var add_result2 = add2(12,8);
+console.log(add);
+
+function cardFlip (flip){
+    $(flip).hide();
 }

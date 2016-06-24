@@ -21,8 +21,11 @@
             $("#div1").click(function(){
                 $(this).html("Click Count: " + count++);
                 console.log("You clicked div 1, It is pink"); //Fix the output to reflect div1's new color
-
+                if (count > 3){
+                    console.log("You clicked too much");
+                }
             });
+
 
             //Here is another .click example that changes the color of the div every time you click on it
             $("#div2").click(function(){
@@ -31,10 +34,10 @@
                 //Here is an if statement that outputs the color of div2 to the console when it is clicked
                 if($("#div2").hasClass("green")){
                     //If it has the class "green" then it will output "I am Green!"
-                    console.log("I am Green!");
+                    $(this).html("I am Green!");
                 }else{
                     //else it does not have the class "green" then it will output "I am White!"
-                    console.log("I am White!");
+                    $(this).html("I am White!");
                 }
             });
             //----Write your code bellow----//

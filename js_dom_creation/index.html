@@ -41,6 +41,25 @@
     <script>
         $(document).ready(function () {
             //playground 1 code
+            var playground_source_div = $('<div/>').addClass('playground_source_div').css('background-color','lavender').css('height','320px');
+            var new_playground_h1 = $("<h1>", {
+                class: 'play_1',
+                text:"I am a heading"
+            });
+            var new_paragraph = $('<p>',{
+                class: 'new_paragraph',
+                text: "This is an awesome paragraph"
+            });
+            var red_paragraph = $('<p>',{
+                class: 'red_paragraph',
+                text: 'This has red text',
+                style: 'color: red'
+            });
+
+        $('#playground1').append(playground_source_div);
+        $('.playground_source_div').append(new_playground_h1);
+            $('.playground_source_div').append(new_paragraph);
+            $('.new_paragraph').append(red_paragraph);
 
             //playground 2 code
 

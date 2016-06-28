@@ -41,29 +41,41 @@
     <script>
         $(document).ready(function () {
             //playground 1 code
-            var playground_source_div = $('<div/>').addClass('playground_source_div').css('background-color','lavender').css('height','320px');
-            var new_playground_h1 = $("<h1>", {
-                class: 'play_1',
+            var $new_playground_h1 = $("<h1>", {
                 text:"I am a heading"
             });
-            var new_paragraph = $('<p>',{
-                class: 'new_paragraph',
+            var $new_paragraph = $('<p>',{
                 text: "This is an awesome paragraph"
             });
-            var red_paragraph = $('<p>',{
-                class: 'red_paragraph',
+            var $red_paragraph = $('<p>', {
                 text: 'This has red text',
                 style: 'color: red'
             });
-
-        $('#playground1').append(playground_source_div);
-        $('.playground_source_div').append(new_playground_h1);
-            $('.playground_source_div').append(new_paragraph);
-            $('.new_paragraph').append(red_paragraph);
+        $('#playground1').append($new_playground_h1, $new_paragraph, $red_paragraph);
 
             //playground 2 code
 
+            var $awesome_text = $('<div>',{
+                text:'Here is some awesome div text',
+                addClass: 'awesome_class'
+            });
+            var $awesome_text2 = $('<div>',{
+                text:'Here is MORE awesome div text',
+                addClass: 'awesome_class'
+            });
+            var $awesome_text3 = $('<div>',{
+                text:'Here is EVEN MORE awesome div text',
+                addClass: 'awesome_class'
+            });
+        $('#playground2').append($awesome_text,$awesome_text2,$awesome_text3);
             //playground 3 code
+            var playground_ul = $('<ul>').addClass('neato');
+            var playground_li = $('<li>',{
+
+                })
+
+
+            $('#playground3').append(playground_ul)
         });
     </script>
 </head>

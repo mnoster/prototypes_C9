@@ -69,13 +69,30 @@
             });
         $('#playground2').append($awesome_text,$awesome_text2,$awesome_text3);
             //playground 3 code
-            var playground_ul = $('<ul>').addClass('neato');
-            var playground_li = $('<li>',{
+            var $playground_ul = $('<ul>').addClass('neato');
+            for(var i=1; i<=3; i++){
+                var $playground_li = $('<li>',{
+                    text: "Link "+i
+                });
+                $playground_ul.append($playground_li);
+            }
+//            var $playground_li = $('<li>',{
+//                text: "Link 1"
+//                });
+//            var $playground_li2 = $('<li>',{
+//                text: "Link 2"
+//            });
+//            var $playground_li3  = $('<li>',{
+//                text: "Link 3"
+//            });
+//            $playground_ul.append($playground_li,$playground_li2,$playground_li3);
 
-                })
-
-
-            $('#playground3').append(playground_ul)
+            var $playground_figure = $('<figure>').addClass('awesome_picture');
+            var $dog_picture = $('<img>').attr("src","http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg");
+            var $playground_figcap = $('<figcaption>',{
+                text:"That's right, <span class="bold_text">you are"
+            })
+            $('#playground3').append($playground_ul,$playground_figure, $dog_picture);
         });
     </script>
 </head>

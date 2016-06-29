@@ -53,9 +53,10 @@
                         return "hello my name is " + this.firstName;
                     };
                     student.aboutMe = function(){
-                        return "My full name is" + this.firstName + " " + this.secondName + ", I am 22 years old and I am a student at " + this.school;
+                        return "My full name is " + this.firstName + " " + this.secondName + ", I am 22 years old and I am a student at " + this.school;
                     };
                     student.askQuestion = function(question){
+                        this.question = question;
                         student.questionList.push(question);
                         student.hasQuestion = true;
                         return "A question has been added to your list";
@@ -69,6 +70,7 @@
                             return "You have no pending questions";
                         }
                     };
+
 
 
     </script>

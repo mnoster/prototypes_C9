@@ -29,20 +29,17 @@
             {name: "George", grade: 93},
             {name: "Robert", grade: 85}];
         function findStudent(name){
-//            var output='';
             var i = 0;
-            var notfound = false;
-            while(i < studentArray.length && notfound){
-                if(notfound){
-                    return "Found [student name] their grade is: [grade]."
+            while(i < studentArray.length){
+                if(studentArray[i].name == name){
+                    return "Found "+  name + " their grade is " + studentArray[i].grade;
                 }
-                else{
-                    return "Student [student name] not found."
-                };
-
-
+            i++;
             }
+            return "Student " + name + " not found.";
+
         }
+        console.log("Find student: " + findStudent("Fred"));
     </script>
 </head>
 <body>

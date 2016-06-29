@@ -64,7 +64,7 @@
                     student.answerQuestion = function(){
                         if(student.hasQuestion=true){
                             student.hasQuestion = false;
-                            return student.questionList;
+                            return student.questionList[student.questionList.length - 1];
                         }
                         else{
                             return "You have no pending questions";

@@ -13,7 +13,31 @@
         for(var rev_i = 9; rev_i>=0; rev_i--){
             console.log('i is equal to ' + numbers[rev_i]);
         }
-//------------odd numbers--------------
+//------------odd numbers--------------------------
+        for(var odd_i=0;odd_i<10;odd_i+=2) {
+            console.log("this is an odd number " + numbers[odd_i]);
+        }
+//-----------for in loop---------------------------
+        var classRoom = {desk1: 'Stu', desk2: 'Peggy', desk3: 'LoneStar', desk4: 'George', desk5: 'Sheldon'};
+        for(var x in classRoom){
+            console.log(classRoom[x] + ' is at '+ x);
+        }
+//-----------while loop----------------------------
+        var studentArray = [
+            {name: "Bob", grade: 87},
+            {name: "Fred", grade: 82},
+            {name: "George", grade: 93},
+            {name: "Robert", grade: 85}];
+        function findStudent(name){
+            var output;
+            var i = 0;
+            var found = false;
+            name = studentArray.name;
+            while(studentArray[i]<3){
+                i++;
+                console.log("Found " +studentArray.name +  " their grade is: " + studentArray.grade);
+            }
+        }
     </script>
 </head>
 <body>

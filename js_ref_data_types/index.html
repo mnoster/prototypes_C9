@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Reference Data Types</title>
+    <script>
+        var student_array = ["Nick","Shawn","Nataya","Brian", "Dan"];
+        student_array.push("Albert","Amanda");
+        console.log(student_array[1]);
+        console.log(student_array);
+        console.log(student_array.length);
+        //--------------Feature Set 2-------------------------------
+//        var Student = function(firstName, secondName,age,school,hasQuestion,questionList) {
+//            this.firstName = firstName;
+//            this.secondName = secondName;
+//            this.age = age;
+//            this.school = school;
+//            this.hasQuestion = hasQuestion;
+//            this.questionList = null;
+//            Student.prototype.greeting = function (student) {
+//                return "hello my name is " + this.firstName;
+//            };
+//            Student.prototype.aboutMe = function(student){
+//                return "My full name is" + this.firstName + " " + this.secondName + ", I am "+ this.age + " old and I am a student at " + this.school;
+//            };
+//            Student.prototype.askQuestion = function(question){
+//                Student.questionList.push(question);
+//                Student.hasQuestion = true;
+//                return "A question has been added to your list";
+//            };
+//            Student.prototype.answerQuestion = function(){
+//                if(Student.hasQuestion=true){
+//                    Student.hasQuestion = false;
+//                    return Student.questionList;
+//                }
+//                else{
+//                    return "You have no pending questions";
+//                }
+//            };
+//
+//        };
+//        var nick = new Student('Nick','Porter', 22);
+//        console.log(nick.greeting(student));
+
+                var student = {};
+                    student.firstName = 'Nick';
+                    student.secondName = 'Porter';
+                    student.age = 22;
+                    student.school = 'UCSC';
+                    student.questionList = [];
+                    student.hasQuestion = false;
+                    student.greeting = function () {
+                        return "hello my name is " + this.firstName;
+                    };
+                    student.aboutMe = function(){
+                        return "My full name is " + this.firstName + " " + this.secondName + ", I am 22 years old and I am a student at " + this.school;
+                    };
+                    student.askQuestion = function(question){
+                        this.question = question;
+                        student.questionList.push(question);
+                        student.hasQuestion = true;
+                        return "A question has been added to your list";
+                    };
+                    student.answerQuestion = function(){
+                        if(student.hasQuestion=true){
+                            student.hasQuestion = false;
+                            return student.questionList[student.questionList.length - 1];
+                        }
+                        else{
+                            return "You have no pending questions";
+                        }
+                    };
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

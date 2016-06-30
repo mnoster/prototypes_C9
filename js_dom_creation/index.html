@@ -64,7 +64,7 @@
                 addClass: 'awesome_class'
             });
             var $awesome_text3 = $('<div>',{
-                text:'Here is EVEN MORE awesome div text',
+                html: "This is <strong>EVEN MORE</strong> awesome div text",
                 addClass: 'awesome_class'
             });
         $('#playground2').append($awesome_text,$awesome_text2,$awesome_text3);
@@ -87,10 +87,8 @@
 //            });
 //            $playground_ul.append($playground_li,$playground_li2,$playground_li3);
 
-            var $playground_figure = $('<figure>').addClass('awesome_picture');
-            var $dog_picture = $('<img>').attr("src","http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg");
-            //var $playground_figcap = $('<figcaption>').html("That's right,"<span class="bold_text">"you are"</span>);
-            $('#playground3').append($playground_ul,$playground_figure, $dog_picture);
+            var $playground_figure = $('<figure class="awesome_picture">'+ '<img src="http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg">' +  '<figcaption>That\'s right, <strong>you are</strong></figcaption>' + '</figure>');
+            $('#playground3').append($playground_ul,$playground_figure);
         });
     </script>
 </head>

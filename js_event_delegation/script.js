@@ -10,9 +10,9 @@
 
 $(document).ready(function(){
 //---------------this will display the # of the button clicked in the console---------------
-    $('#list button').on('click',function(){
-        console.log($(this).text());
-    });
+//     $('#list button').on('click',function(){
+//         console.log($(this).text());
+//     });
 //----------adding a DOM element which is a button that will be added to the end of the list------------
     var new_li_item = $('<li>',{
         appendTo:$('#list')
@@ -24,12 +24,13 @@ $(document).ready(function(){
     });
 
 //----------the event delegation-------------------
-    var $button_delegation = $('#list button').last().on('click',function(){
+    var $button_delegation = $('#list').on('click', 'button',function(){
         console.log($(this).text());
     });
-
+//------------Addons------------------
     var $google_btn = $('<button>',{
         appendTo: $('ul'),
+        addClass: 'google_btn',
         text: 'Google.com',
         style: "background: blue; color: white; margin-top: 50px"
 
@@ -37,10 +38,11 @@ $(document).ready(function(){
         window.open('https://www.google.com/?gws_rd=ssl','_blank')
     });
 
-
-
-
-    
+    var $new_handler =  $('.google_btn').on('click',function(){
+         if($(this).attr('text' != 'Google.com')){
+             alert('Does not go to google');
+         }
+     })
 
 
 });

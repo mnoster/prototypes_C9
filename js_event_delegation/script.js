@@ -14,11 +14,20 @@ $(document).ready(function(){
         console.log($(this).text());
     });
 //----------adding a DOM element which is a button that will be added to the end of the list------------
+    var new_li_item = $('<li>',{
+        appendTo:$('#list')
+    });
     var $button5 = $('<button>',{
-      appendTo: $('#list'),
-      text: "Delegated Button #5 handler"
+      appendTo: $(new_li_item),
+      text: "Delegated Button #5 handler",
+      style: 'margin: 10px'
     });
 
+
+
+
+
+    
 
 
 });

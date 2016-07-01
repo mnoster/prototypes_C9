@@ -23,6 +23,10 @@ $(document).ready(function(){
       style: 'margin: 10px'
     });
 
+//----------the event delegation-------------------
+    var button_delegation = $('#list button').last().on('click',function(){
+        console.log($(this).text());
+    })
 
 
 

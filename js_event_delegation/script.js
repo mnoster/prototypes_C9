@@ -24,9 +24,18 @@ $(document).ready(function(){
     });
 
 //----------the event delegation-------------------
-    var button_delegation = $('#list button').last().on('click',function(){
+    var $button_delegation = $('#list button').last().on('click',function(){
         console.log($(this).text());
-    })
+    });
+
+    var $google_btn = $('<button>',{
+        appendTo: $('ul'),
+        text: 'Google.com',
+        style: "background: blue; color: white; margin-top: 50px"
+
+    }).click(function(){
+        window.open('https://www.google.com/?gws_rd=ssl','_blank')
+    });
 
 
 

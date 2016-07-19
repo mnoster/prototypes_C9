@@ -11,20 +11,10 @@ $(document).ready(function(){
                 console.log('AJAX Success function called, with the following result:', result);
                 global_result = result;
                 console.log('this is global result: ', global_result);
-
-                var first_movie = 'first';
-                // iterate over each element in the array
-                for (var i = 0; i < global_result.length; i++){
-                    // look for the entry with a matching `code` value
-                    if (obj[i].code == first_movie){
-                      console.log('we found it');
-                        // obj[i].name is the matched result
-                    }
-                }
+                var first_movie = global_result.feed.entry[0].image[2].label;
+                console.log(first_movie);
             }
         });
         console.log('End of click function');
-
     });
-
 });

@@ -11,7 +11,7 @@ $(document).ready(function(){
                 console.log('AJAX Success function called, with the following result:', result);
                 global_result = result;
                 console.log('this is global result: ', global_result);
-                var first_movie = global_result.feed.entry[0].image[2].label;
+                var first_movie = global_result.feed.entry[0]['im:image'][0].label;
                 console.log(first_movie);
             }
         });

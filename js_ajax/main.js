@@ -1,6 +1,7 @@
 //Create GLOBAL variable below here on line 2
 var global_result = null;
 var movie_list = null;
+
 $(document).ready(function(){
     $('button').click(function(){
         console.log('click initiated');
@@ -17,7 +18,7 @@ $(document).ready(function(){
                 global_result = first_movie;
                 console.log('movie list length: ' + movie_list.length);
                 for(var i = 0; i< movie_list.length; i++){
-                    console.log( result.feed.entry[i]['im:image'][2])
+                    console.log(result.feed.entry[i]['im:image'][2])
                 }
             }
         });

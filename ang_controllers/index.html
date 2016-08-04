@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Controllers</title>
+    <!-- Add the AngularJS CDN below -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+</head>
+<body ng-app="myApp">
+<div ng-controller = "formController as fc">
+    <input ng-model = "fc.form.fName">
+    <input ng-model = fc.form.lName>
+    <input ng-model = fc.form.email>
+    <textarea ng-model = fc.form.comments></textarea>
+</div>
+
+<script>
+    var app = angular.module("myApp",[]);
+    app.controller("formController", function (){
+        this.form={};
+        this.formArray = [];
+
+    })
+</script>
+</body>
+</html>

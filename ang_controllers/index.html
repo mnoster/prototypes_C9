@@ -8,38 +8,56 @@
 
 </head>
 <body ng-app="myApp">
-<div ng-controller = "formController as fc">
-    <input ng-model = "fc.form.fName"><br>
-    <input ng-model = fc.form.lName><br>
-    <input ng-model = fc.form.email><br>
-    <textarea ng-model = fc.form.comments></textarea>
-    <button ng-click = "fc.addObj()">submit</button>
+<div ng-controller="formController as fc">
+    <input ng-model="fc.form.fName"><br>
+    <input ng-model='fc.form.lName'><br>
+    <input ng-model='fc.form.email'><br>
+    <textarea ng-model='fc.form.comments' ng-keydown="fc.charactersLeft()" ></textarea>
+    <button ng-click="fc.addObj(); fc.reset()">submit</button>
     <table>
         <tr>
             <th>Full Name</th>
             <th>Email</th>
             <th>Comments</th>
         </tr>
-        <tr ng-repeat = "form in fc.formArray">
-            <td>{{form.fName + "  " + form.lName}}</td>
+        <tr ng-repeat="form in fc.formArray">
+            <td>{{form.fName + " " + form.lName}}</td>
             <td>{{form.email}}</td>
             <td>{{form.comments}}</td>
         </tr>
-
     </table>
+    <p>{{fc.lettersLeft}}</p>
 </div>
 
 <script>
-    var app = angular.module("myApp",[]);
-    app.controller("formController", function (){
-        this.form={};
+    var app = angular.module("myApp", []);
+    app.controller("formController", function () {
+        this.form = {
+            comments: '',
+            lName: '',
+            fName: '',
+            email: ''
+        };
         this.formArray = [];
-        this.addObj = function(){
+        this.maxLength = 25;
+//        this.comments = null;
+        this.lettersLeft = null;
+        this.addObj = function () {
             this.formArray.push(this.form);
             this.form = {};
-        }
+        };
+        this.reset = function () {
+            this.lettersLeft = 25;
+        };
+        this.charactersLeft = function () {
+            if (this.lettersLeft > -1) {
+                this.lettersLeft = this.maxLength - this.form.comments.length;
+            }
+            else {
 
-    })
+            }
+        }
+    });
 </script>
 </body>
 </html>

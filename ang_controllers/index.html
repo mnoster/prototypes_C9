@@ -12,52 +12,77 @@
     <input ng-model="fc.form.fName"><br>
     <input ng-model='fc.form.lName'><br>
     <input ng-model='fc.form.email'><br>
-    <textarea ng-model='fc.form.comments' ng-keydown="fc.charactersLeft()" ></textarea>
+    <textarea ng-model='fc.form.comments' ng-keydown="fc.charactersLeft()"  ng-disabled = "fc.disablebox()"></textarea>
     <button ng-click="fc.addObj(); fc.reset()">submit</button>
+
+<div ng-controller = "tableController as tc">
+
+
     <table>
         <tr>
             <th>Full Name</th>
             <th>Email</th>
             <th>Comments</th>
+
         </tr>
-        <tr ng-repeat="form in fc.formArray">
+        <tr ng-repeat="form in formArray">
             <td>{{form.fName + " " + form.lName}}</td>
             <td>{{form.email}}</td>
             <td>{{form.comments}}</td>
+            <td><button ng-click = "tc.newMethod($index)">delete</button></td>
+        </tr>
+        <tr>
+            <td>{{fc.form.fName + " " + fc.form.lName}}</td>
+            <td>{{fc.form.email}}</td>
+            <td>{{fc.form.comments}}</td>
         </tr>
     </table>
+</div>
     <p>{{fc.lettersLeft}}</p>
 </div>
 
 <script>
     var app = angular.module("myApp", []);
-    app.controller("formController", function () {
+    app.controller("formController", function ($scope) {
         this.form = {
             comments: '',
             lName: '',
             fName: '',
             email: ''
         };
-        this.formArray = [];
+        $scope.formArray = [];
         this.maxLength = 25;
-//        this.comments = null;
+        this.charLimit = null;
         this.lettersLeft = null;
         this.addObj = function () {
-            this.formArray.push(this.form);
+            $scope.formArray.push(this.form);
             this.form = {};
         };
         this.reset = function () {
+            this.form.comments = " ";
             this.lettersLeft = 25;
         };
         this.charactersLeft = function () {
             if (this.lettersLeft > -1) {
                 this.lettersLeft = this.maxLength - this.form.comments.length;
             }
-            else {
-
+        };
+        this.disablebox = function () {
+            if (this.lettersLeft < 0) {
+                return true;
             }
         }
     });
+    app.controller("tableController",function($scope){
+        this.newMethod = function($index){
+            console.log("new method");
+            $scope.formArray.splice($index,1);
+        };
+        this.returnEntries = function(){
+           this.entry  =  $scope.formArray.length;
+            console.log('entry' , entry);
+        }
+    })
 </script>
 </body>
 </html>

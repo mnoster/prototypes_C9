@@ -13,11 +13,10 @@
     <input ng-model='fc.form.lName'><br>
     <input ng-model='fc.form.email'><br>
     <textarea ng-model='fc.form.comments' ng-keydown="fc.charactersLeft()"  ng-disabled = "fc.disablebox()"></textarea>
-    <button ng-click="fc.addObj(); fc.reset()">submit</button>
+
 
 <div ng-controller = "tableController as tc">
-
-
+    <button ng-click="fc.addObj(); fc.reset(); tc.returnEntries()">submit</button>
     <table>
         <tr>
             <th>Full Name</th>
@@ -37,8 +36,10 @@
             <td>{{fc.form.comments}}</td>
         </tr>
     </table>
+    <p> Letters left: {{fc.lettersLeft}}</p>
+    <p>Number of Entries:  {{tc.entry}}</p>
 </div>
-    <p>{{fc.lettersLeft}}</p>
+
 </div>
 
 <script>
@@ -74,6 +75,7 @@
         }
     });
     app.controller("tableController",function($scope){
+         var entry = null;
         this.newMethod = function($index){
             console.log("new method");
             $scope.formArray.splice($index,1);

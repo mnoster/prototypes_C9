@@ -16,7 +16,7 @@ app.provider('sgtData', function () {
                     data: data,
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).then(function success(response) {
-                    $log.info('success: ', response);
+                    console.log('success response.data: ', response.data.data);
                     defer.resolve(response)
                 }), function error(response) {
                     $log.error("$http fail: ", response);
@@ -37,24 +37,22 @@ app.provider('sgtData', function () {
 //     // $httpProvider.defaults.
 //
 // });
-
 //Include your service in the function parameter list along with any other services you may want to use
-app.controller('ioController', function (sgtData) {
+app.controller('ioController', function (sgtData, $scope) {
     //Create a variable to hold this, DO NOT use the same name you used in your provider
     var new_self = this;
     //Add an empty data object to your controller, make sure to call it 'data'
-    var data = {};
-
+    $scope.data = {};
     //Add a function called getData to your controller to call the SGT API
     this.getData = function (){
         console.log("get data fn");
-        sgtData.callApi()
+        sgtData.callApi($scope)
             .then(function success(response){
-                console.log("this is response: " , response);
+                new_self.data = response.data;
+                // console.log("this is $scope.data", $scope.data);
+                // console.log("this is data : " , $scope.data);
 
             })
     };
-
-    //Refer to the prototype instructions for more help
 
 });

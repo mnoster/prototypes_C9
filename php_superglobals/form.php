@@ -4,7 +4,6 @@
         <option name = "gender">Male</option>
         <option name = "gender">Female</option>
         <option name = "gender">Other</option>
-
     </select>
     <input placeholder="Favorite Fruit" name = "fav_fruit[]">
     <input placeholder="Favorite Fruit" name = "fav_fruit[]">

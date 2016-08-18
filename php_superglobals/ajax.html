@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
+<form name = "form">
+    <input type="checkbox" value = "howdy" id="input">
+    <textarea id="text_box"></textarea>
+    <button type="button" name="clicked" id ="send_ajax" >submit</button>
+</form>
+
+
+<script>
+    $(document).ready(function()
+    {
+        $('#send_ajax').click(function ajax_call(){
+            var textarea_data = $('#text_box').val();
+            var yes_no_howdy = $('#input').val();
+            $.ajax({
+                url: 'index.php',
+                method: 'post',
+                data: {
+                    text: textarea_data,
+                    howdy: yes_no_howdy
+                },
+                dataType: 'text'
+            }).success(function (response) {
+
+                console.log("response: ", response);
+            }).error(function (response) {
+                console.log("You got an error: ", response);
+            })
+        });
+    });
+</script>
+
+</body>
+</html>

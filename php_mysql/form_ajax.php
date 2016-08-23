@@ -16,16 +16,20 @@
     });
 
     function send_data_to_db(){
-        var title =  $('#title').val();
-        var details = $('#details').val();
-        var timestamp = $('#timestamp').val();
-        var speed = $('#speed').val();
-        console.log("title: ",  title);
+        var title_txt =  $('#title').val();
+        var details_txt = $('#details').val();
+        var timestamp_txt = $('#timestamp').val();
+        var speed_txt = $('#speed').val();
+        console.log("title: ",  title_txt);
 
      $.ajax({
-         url: "mysql_connect.php",
-         data: {title,details,timestamp,speed},
+         url: "index_insert.php",
          method: "POST",
+         data: {'title': title_txt,
+             'details': details_txt,
+             'timestamp':timestamp_txt
+         },
+         dataType: 'text',
          success:function(response){
              console.log("send data was a success: " ,response);
              $('input').val("");

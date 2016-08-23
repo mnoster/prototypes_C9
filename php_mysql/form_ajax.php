@@ -20,7 +20,6 @@
         var details = $('#details').val();
         var timestamp = $('#timestamp').val();
         var speed = $('#speed').val();
-
         console.log("title: ",  title);
 
      $.ajax({
@@ -29,6 +28,7 @@
          method: "POST",
          success:function(response){
              console.log("send data was a success: " ,response);
+             $('input').val("");
          },
          error: function(response){
              console.log("there was a problem sending your data to the database: " , response);

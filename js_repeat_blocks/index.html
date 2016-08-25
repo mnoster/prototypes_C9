@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reg-ex</title>
+    <script>
+        var hello_str = "hello";
+        var regex_e = /e/g;
+        var reg_array1 = hello_str.match(regex_e);
+        console.log(reg_array1);
+//-----------------------------------------------------------
+        var enter_str = "HE entEred";
+        var regex_e_capitals_included = /e/gi;
+        var reg_array2 = enter_str.match(regex_e_capitals_included);
+        console.log(reg_array2);
+//-----------------------------------------------------------
+        var stir_str = "stir the star";
+        var regex_find_star_stir = /star|stir/g;
+        var reg_array3 = stir_str.match(regex_find_star_stir);
+        console.log(reg_array3);
+//-----------------------------------------------------------
+        var phone_num_str = "818 555 1212";
+        var regex_validate_phone_num = /1? ?\(?([0-9]{3})\)?-? *([0-9]{3})-? *([0-9]{4})/g;
+        var reg_array4 = phone_num_str.match(regex_validate_phone_num);
+        console.log(reg_array4);
+//-----------------------------------------------------------
+
+    </script>
+</head>
+<body>
+<h1>JS Reg-ex</h1>
+</body>
+</html>

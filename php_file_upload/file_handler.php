@@ -1,8 +1,8 @@
 <!-- File Handler -->
 <!--<pre>-->
 <?php
-//print_r($_FILES['upload_file']);
-////print_r($_POST);
+print_r($_FILES['upload_file']);
+print_r($_POST);
 //?>
 <!--</pre>-->
 <?php
@@ -16,8 +16,6 @@ $user_img_file = $_FILES['upload_file'];
     <?php
     if (!empty('uploads')) {
         $image_name = pathinfo($_FILES['upload_file']['name']);
-//        print("img name: " ); print_r($image_name);
-
     }
     if($image_name['extension'] == 'gif'|| $image_name['extension'] == 'jpeg'|| $image_name['extension'] == 'jpg'|| $image_name['extension'] == 'png'){
         print('<br>'. "Valid file type sent: ");
@@ -34,11 +32,12 @@ $user_img_file = $_FILES['upload_file'];
     if($img_name_state && $img_size_state){
         $final_name = $target_dir . $image_name['basename'];
         move_uploaded_file($user_img_file['tmp_name'], $final_name );
-
+        print( '<br><br>' . "Your image has been successfully saved");
     }
-
+    else{
+        print( '<br><br>' . "There was an error while saving your image");
+    }
     ?>
-
 </pre>
 
 

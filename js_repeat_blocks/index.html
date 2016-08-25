@@ -24,7 +24,10 @@
         var reg_array4 = phone_num_str.match(regex_validate_phone_num);
         console.log(reg_array4);
 //-----------------------------------------------------------
-
+        var password_str = "rest5Haplet3";
+        var regex_validate_password = /^[A-Za-z](?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d$@$!%*?&]{6,32}/g; //in input field for password put a limit on the amount of characters to 32
+        var reg_array5 = password_str.match(regex_validate_password);
+        console.log(reg_array5);
     </script>
 </head>
 <body>

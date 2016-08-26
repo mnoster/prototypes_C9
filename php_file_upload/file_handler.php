@@ -1,18 +1,14 @@
 <!-- File Handler -->
 <!--<pre>-->
 <?php
-print_r($_FILES['upload_file']);
 print_r($_POST);
 //?>
 <!--</pre>-->
 <?php
 $target_dir = 'uploads/'; //variable to hold target directory
 $target_file = $target_dir . $_FILES['upload_file']['name'];// this will create a file path using directory
-$uploadOK = true; //Flag used for error output
 $user_img_file = $_FILES['upload_file'];
 ?>
-
-<pre>
     <?php
     if (!empty('uploads')) {
         $image_name = pathinfo($_FILES['upload_file']['name']);
@@ -38,18 +34,3 @@ $user_img_file = $_FILES['upload_file'];
         print( '<br><br>' . "There was an error while saving your image");
     }
     ?>
-</pre>
-
-
-
-
-
-
-
-
-
-
-<pre>
-    <?php
-    ?>
-</pre>

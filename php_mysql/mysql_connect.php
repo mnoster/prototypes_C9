@@ -1,4 +1,4 @@
 <?php
-$conn =mysqli_connect("localhost", "root", "root", "testdatabaseprototype");
+$conn =mysqli_connect("", "", "", "");
 
 ?>
